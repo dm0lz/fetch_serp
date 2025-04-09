@@ -92,6 +92,7 @@ COPY --from=build /root/.cache/ms-playwright /home/rails/.cache/ms-playwright
 
 ENV PATH="/usr/local/node/bin:$PATH"
 ENV PATH="node_modules/.bin:$PATH"
+ENV PORT=3009
 
 # Run and own only the runtime files as a non-root user for security
 RUN groupadd --system --gid 1000 rails && \
