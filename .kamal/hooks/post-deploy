@@ -1,5 +1,0 @@
-#!/bin/bash
-echo "Pulling Llama model..."
-kamal accessory exec --reuse ollama ollama pull deepseek-r1
-kamal accessory exec --reuse ollama ollama create custom-deepseek-r1 -f /ollama-config/Modelfile
-kamal accessory exec --reuse ollama ollama pull jeffh/intfloat-multilingual-e5-large-instruct:f16
