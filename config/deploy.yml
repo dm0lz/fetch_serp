@@ -122,12 +122,11 @@ accessories:
   db:
     image: pgvector/pgvector:pg17
     host: fetchserp.com
-    port: "127.0.0.1:5433:5433"
+    port: "127.0.0.1:5432:5432"
     env:
       clear:
         POSTGRES_USER: "fetch_serp"
         POSTGRES_DB: "fetch_serp_production"
-        PGPORT: 5433
       secret:
         - POSTGRES_PASSWORD
     files:
