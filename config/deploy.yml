@@ -28,7 +28,6 @@ proxy:
   hosts:
     - fetchserp.com
     - www.fetchserp.com
-  network: fetch_serp_kamal_network
 
 # Credentials for your image host.
 registry:
