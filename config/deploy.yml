@@ -4,8 +4,7 @@ service: fetch_serp
 # Name of the container image.
 image: olivier86/fetch_serp
 
-docker:
-  network: fetch_serp_kamal_network
+network: fetch_serp_kamal_network
 
 # Deploy to these servers.
 servers:
