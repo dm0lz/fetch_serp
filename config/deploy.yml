@@ -4,8 +4,6 @@ service: fetch_serp
 # Name of the container image.
 image: olivier86/fetch_serp
 
-network: fetch_serp_kamal_network
-
 # Deploy to these servers.
 servers:
   web:
@@ -30,6 +28,8 @@ proxy:
   hosts:
     - fetchserp.com
     - www.fetchserp.com
+  options:
+    network: fetch_serp_kamal_network
 
 # Credentials for your image host.
 registry:
