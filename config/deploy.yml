@@ -9,9 +9,13 @@ servers:
   web:
     hosts:
       - fetchserp.com
+    options:
+      network: fetch_serp_kamal_network
   job:
     hosts:
       - fetchserp.com
+    options:
+      network: fetch_serp_kamal_network
     cmd: bin/jobs
 
 # Enable SSL auto certification via Let's Encrypt and allow for multiple apps on a single web server.
@@ -123,6 +127,8 @@ accessories:
     image: pgvector/pgvector:pg17
     host: fetchserp.com
     port: "127.0.0.1:5433:5433"
+    options:
+      network: fetch_serp_kamal_network
     env:
       clear:
         POSTGRES_USER: "fetch_serp"
