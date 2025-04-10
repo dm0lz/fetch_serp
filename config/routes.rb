@@ -43,15 +43,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "home/index"
       get "serp", to: "serp#index"
-      get "domain_emails", to: "domain_emails#index"
-      get "company_domain", to: "company_domain#index"
       post "scrap_web_page", to: "scrap_web_page#create"
-      post "scrap_web_pages", to: "scrap_web_pages#create"
-      post "scrap_domain", to: "scrap_domain#create"
-      get "hf_models", to: "hf_models#index"
-      post "hf_inference", to: "hf_inference#create"
-      post "analyze_web_page", to: "analyze_web_page#create"
-      post "analyze_serp", to: "analyze_serp#create"
     end
   end
 
