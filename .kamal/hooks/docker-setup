@@ -1,2 +1,0 @@
-#!/bin/sh
-docker network inspect fetch_serp_kamal_network >/dev/null 2>&1 || docker network create fetch_serp_kamal_network
