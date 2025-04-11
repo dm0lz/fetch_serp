@@ -40,7 +40,7 @@ OasRails.configure do |config|
   # Servers Information. For more details follow: https://spec.openapis.org/oas/latest.html#server-object
   config.servers = [
     { url: "https://www.fetchserp.com", description: "Production" },
-    { url: "http://localhost:3000", description: "Local" }
+    { url: "http://localhost:3009", description: "Local" }
   ]
 
   # Tag Information. For more details follow: https://spec.openapis.org/oas/latest.html#tag-object
