@@ -1,7 +1,7 @@
 class SearchEngine::Provider::YandexService < BaseService
   def initialize(pages_number: 10, options: "{slowMo: 650}")
     @pages_number = pages_number
-    @options = options
+    @options = options.gsub("\\", "")
   end
   def call(query)
     serps = RuntimeExecutor::NodeService.new.call(js_code(query))

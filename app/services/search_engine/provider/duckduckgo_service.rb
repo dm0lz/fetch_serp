@@ -1,7 +1,7 @@
 class SearchEngine::Provider::DuckduckgoService < BaseService
   def initialize(pages_number: 10, options: "{}")
     @pages_number = pages_number
-    @options = options
+    @options = options.gsub("\\", "")
   end
   def call(query)
     url = "https://duckduckgo.com/?t=h_&q=#{query.gsub("'", "")}"
