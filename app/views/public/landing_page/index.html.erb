@@ -222,6 +222,10 @@
                   <h4 class="font-medium text-gray-700">query</h4>
                   <p class="text-sm text-gray-600">Search query string</p>
                 </div>
+                <div>
+                  <h4 class="font-medium text-gray-700">country</h4>
+                  <p class="text-sm text-gray-600">us | es | fr | de for google</p>
+                </div>
               </div>
             </div>
             
@@ -237,13 +241,13 @@
 
             <!-- Code Examples -->
             <div id="curl" class="curl code-block">
-              <pre><code class="language-bash">curl -X GET "https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&pages_number=2&query=tesla" \
+              <pre><code class="language-bash">curl -X GET "https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&country=fr&pages_number=2&query=tesla" \
  -H 'accept: application/json'\
  -H 'authorization: Bearer YOUR_API_TOKEN'</code></pre>
             </div>
 
             <div id="javascript" class="javascript code-block hidden">
-              <pre><code class="language-javascript">const response = await fetch('https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&pages_number=2&query=tesla', {
+              <pre><code class="language-javascript">const response = await fetch('https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&country=fr&pages_number=2&query=tesla', {
   method: 'GET',
   headers: {
     'accept': 'application/json',
@@ -260,7 +264,7 @@ console.log(data);</code></pre>
 require 'uri'
 require 'json'
 
-uri = URI("https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&pages_number=2&query=tesla")
+uri = URI("https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&country=fr&pages_number=2&query=tesla")
 request = Net::HTTP::Get.new(uri)
 request['Authorization'] = 'Bearer YOUR_API_TOKEN'  # Replace with your actual API token
 request['Accept'] = 'application/json'
@@ -273,7 +277,7 @@ puts JSON.pretty_generate(JSON.parse(response.body))</code></pre>
             <div id="python" class="python code-block hidden">
               <pre><code class="language-python">import requests
 
-url = "https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&pages_number=2&query=tesla"
+url = "https://www.fetchserp.com/api/v1/serp?search_engine=duckduckgo&country=fr&pages_number=2&query=tesla"
 headers = {
     "Authorization": "Bearer YOUR_API_TOKEN",  # Replace with your actual API token
     "Accept": "application/json"

@@ -3,7 +3,7 @@ class Api::V1::SerpController < Api::V1::BaseController
   # @auth [bearer]
   # @parameter query(query) [!String] The query to search
   # @parameter search_engine(query) [String] The search engine to use. Supported values: google, bing, yahoo, duckduckgo, yandex
-  # @parameter country(query) [String] The country to search from
+  # @parameter country(query) [String] The country to search from. For google limited to us, fr, de, es
   # @parameter pages_number(query) [Integer] The number of pages to search
   # @response Validation errors(401) [Hash{error: String}]
   # @response Validation errors(403) [Hash{error: String}]
