@@ -1,5 +1,5 @@
-class Api::V1::SerpController < Api::V1::BaseController
-  # @summary Get search engine results Pages
+class Api::V1::SearchController < Api::V1::BaseController
+  # @summary Get search engine results
   # @auth [bearer]
   # @parameter query(query) [!String] The query to search
   # @parameter search_engine(query) [String] The search engine to use. Supported values: google, bing, yahoo, duckduckgo, yandex
@@ -30,12 +30,13 @@ class Api::V1::SerpController < Api::V1::BaseController
       end
     end
 
-    @serp = SearchEngine::QueryService.new(
+    serp = SearchEngine::QueryService.new(
       search_engine: serp_params[:search_engine] || "duckduckgo",
       country: serp_params[:country] || "us",
       pages_number: serp_params[:pages_number] || 3
     ).call(params.expect(:query))
-    @error = @serp["error"] rescue nil
+    @error = serp["error"] rescue nil
+    @web_pages = Scraper::WebPagesService.new(serp.map { |result| result["url"] }).call unless @error
   end
 
   private

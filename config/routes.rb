@@ -43,6 +43,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       get "home/index"
       get "serp", to: "serp#index"
+      get "search", to: "search#index"
       post "scrap_web_page", to: "scrap_web_page#create"
     end
   end

@@ -6,7 +6,7 @@ class SearchEngine::Provider::DuckduckgoService < BaseService
   def call(query)
     url = "https://duckduckgo.com/?t=h_&q=#{query.gsub("'", "")}"
     serp = Scraper::PageEvaluatorService.new(url, @options).call(js_code)
-    serp["search_results"]
+    serp["search_results"] rescue nil
   end
 
   private
