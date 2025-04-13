@@ -1,3 +1,7 @@
 json.response do
-  json.data JSON.parse(yield)
+  if @error
+    json.error @error
+  else
+    json.data JSON.parse(yield)
+  end
 end

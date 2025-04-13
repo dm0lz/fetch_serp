@@ -9,6 +9,6 @@ class SearchEngine::Provider::GoogleService < BaseService
     url = URI("http://#{ENV.fetch('GOOGLE_SERP_HOST', 'localhost:3001')}/api/search?q=#{query}&pages_nb=#{@pages_number}&country=#{@country}")
     response = Net::HTTP.get(url)
     data = JSON.parse(response)
-    data.map { |serp| serp["search_results"] }.flatten
+    data.is_a?(Array) ? data.map { |serp| serp["search_results"] }.flatten : data
   end
 end

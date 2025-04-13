@@ -35,6 +35,7 @@ class Api::V1::SerpController < Api::V1::BaseController
       country: serp_params[:country] || "us",
       pages_number: serp_params[:pages_number] || 3
     ).call(params.expect(:query))
+    @error = @serp["error"] rescue nil
   end
 
   private
